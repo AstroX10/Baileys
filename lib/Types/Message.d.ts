@@ -1,6 +1,7 @@
 /// <reference types="node" />
 /// <reference types="node" />
 /// <reference types="node" />
+/// <reference types="node" />
 import { AxiosRequestConfig } from 'axios';
 import type { Logger } from 'pino';
 import type { Readable } from 'stream';
@@ -22,11 +23,13 @@ export type WALocationMessage = proto.Message.ILocationMessage;
 export type WAGenericMediaMessage = proto.Message.IVideoMessage | proto.Message.IImageMessage | proto.Message.IAudioMessage | proto.Message.IDocumentMessage | proto.Message.IStickerMessage;
 export import WAMessageStubType = proto.WebMessageInfo.StubType;
 export import WAMessageStatus = proto.WebMessageInfo.Status;
-export type WAMediaUpload = Buffer | {
+export type WAMediaPayloadURL = {
     url: URL | string;
-} | {
+};
+export type WAMediaPayloadStream = {
     stream: Readable;
 };
+export type WAMediaUpload = Buffer | WAMediaPayloadStream | WAMediaPayloadURL;
 /** Set of message types that are supported by the library */
 export type MessageType = keyof proto.Message;
 export type DownloadableMessage = {

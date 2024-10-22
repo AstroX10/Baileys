@@ -3,13 +3,13 @@ export declare const OFFICIAL_BIZ_JID = "16505361212@c.us";
 export declare const SERVER_JID = "server@c.us";
 export declare const PSA_WID = "0@c.us";
 export declare const STORIES_JID = "status@broadcast";
-export type JidServer = 'c.us' | 'g.us' | 'broadcast' | 's.whatsapp.net' | 'call' | 'lid';
+export type JidServer = 'c.us' | 'g.us' | 'broadcast' | 's.whatsapp.net' | 'call' | 'lid' | 'newsletter';
 export type JidWithDevice = {
     user: string;
     device?: number;
 };
 export type FullJid = JidWithDevice & {
-    server: JidServer | string;
+    server: JidServer;
     domainType?: number;
 };
 export declare const jidEncode: (user: string | number | null, server: JidServer, device?: number, agent?: number) => string;

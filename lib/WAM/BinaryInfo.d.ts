@@ -1,14 +1,15 @@
 /// <reference types="node" />
+/// <reference types="node" />
 export declare class BinaryInfo {
     protocolVersion: number;
     sequence: number;
     events: {
         [x: string]: {
             props: {
-                [x: string]: any;
+                [x: string]: import("./constants").Value;
             };
             globals: {
-                [x: string]: any;
+                [x: string]: import("./constants").Value;
             };
         };
     }[];

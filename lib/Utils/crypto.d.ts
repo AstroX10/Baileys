@@ -1,4 +1,5 @@
 /// <reference types="node" />
+/// <reference types="node" />
 import { KeyPair } from '../Types';
 /** prefix version byte to the pub keys, required for some curve crypto functions */
 export declare const generateSignalPubKey: (pubKey: Uint8Array | Buffer) => Uint8Array | Buffer;
